@@ -13,6 +13,9 @@ public class Main extends JavaPlugin {
 
         // Registra el comando "kit" (establecer una instancia de su clase de comando como ejecutor)
         this.getCommand("kit").setExecutor(new Kit());
+
+        // Registra el listener
+        getServer().getPluginManager().registerEvents(new MyListener(), this);
     }
 
     @Override
