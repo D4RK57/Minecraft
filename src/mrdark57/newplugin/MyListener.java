@@ -17,11 +17,6 @@ public class MyListener implements Listener {
         Bukkit.broadcastMessage("Welcome to the server" + event.getPlayer().getName() + "!");
     }
 
-    @EventHandler
-    public void onMyEvent(MyEvent event) {
-        Bukkit.broadcastMessage(event.getPlayerName());
-    }
-
 /* -------------- Funciones avanzadas ----------------
     1. Parámetros de EventHandler:
         priority: Indica la prioridad de su oyente. Existen seis prioridades diferentes,
