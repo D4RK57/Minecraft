@@ -1,6 +1,8 @@
 package mrdark57.newplugin;
 
 import mrdark57.newplugin.commands.Kit;
+import mrdark57.newplugin.commands.MainCommand;
+import mrdark57.newplugin.events.Enter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -18,27 +20,26 @@ public class NewPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        Bukkit.getLogger().info(ChatColor.YELLOW + "----------------------------------------");
         Bukkit.getLogger().info(name + ChatColor.AQUA +" has been enabled (version: " + ChatColor.RED + version + ")");
+        Bukkit.getLogger().info(ChatColor.YELLOW + "----------------------------------------");
 
         registerCommands();
         registerEvents();
         registerConfig();
-
-        // Registra el comando "kit" (establecer una instancia de su clase de comando como ejecutor)
-        this.getCommand("kit").setExecutor(new Kit());
-
-        // Registra el listener
-        getServer().getPluginManager().registerEvents(new MyListener(), this);
     }
 
     @Override
     public void onDisable() {
+        Bukkit.getLogger().info(ChatColor.YELLOW + "----------------------------------------");
         Bukkit.getLogger().info(name + ChatColor.RED + " has been disabled");
+        Bukkit.getLogger().info(ChatColor.YELLOW + "----------------------------------------");
     }
 
     //registrar comandos
     public void registerCommands(){
-        this.getCommand("miplugin").setExecutor(new MainCommand(this));
+        this.getCommand("newplugin").setExecutor(new MainCommand(this));
+        this.getCommand("kit").setExecutor(new Kit(this));
     }
 
     //registrar eventos
