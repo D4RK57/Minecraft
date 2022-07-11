@@ -1,5 +1,7 @@
 package mrdark57.newplugin.commands;
 
+import mrdark57.newplugin.Main;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,6 +10,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public class Kit implements CommandExecutor {
+
+    private Main plugin;
+
+    public Kit(Main plugin){
+        this.plugin = plugin;
+    }
 
     // CommandSender representa lo que sea que esté enviando el comando. Podría ser un Player, ConsoleCommandSender o BlockCommandSender
     //El comando representa lo que es el comando que se llama. Esto casi siempre se sabrá con anticipación.
@@ -27,6 +35,8 @@ public class Kit implements CommandExecutor {
 
             // Le da al jugador los items (la coma separa la lista de todos los stacks)
             player.getInventory().addItem(bricks, diamond);
+
+            player.sendMessage(plugin.name + ChatColor.AQUA+" Enjoy your kit! ");
         }
 
         // Si el jugador (o consola) uses our command correct, we can return true

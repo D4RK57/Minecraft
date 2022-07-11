@@ -1,5 +1,12 @@
-name: New Plugin
+name: NewPlugin
 version: 1.0
 author: MrDark57_
-main: mrdark57.Main
-api-version: 1.18.2
+main: mrdark57.newplugin.Main
+commands:
+  kit:
+    description: Give you a simple kit
+    usage: /<command>
+  newplugin:
+    description: The main command
+    usage: /<command>
+#    permission: yourplugin.yourcommandpermission

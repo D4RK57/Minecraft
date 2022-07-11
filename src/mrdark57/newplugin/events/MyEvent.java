@@ -1,4 +1,4 @@
-package mrdark57.newplugin;
+package mrdark57.newplugin.events;
 
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
